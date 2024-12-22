@@ -6,7 +6,7 @@ import logo from '../assets/margdarshakendra-logo.webp';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-800 py-16">
+    <footer className="bg-slate-200 text-gray-800 py-16">
       <div className="container mx-auto px-6 md:px-12">
         {/* Footer Top */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-300 pb-8">

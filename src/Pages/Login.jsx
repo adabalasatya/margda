@@ -107,7 +107,7 @@ export const Login = () => {
               placeholder="Login ID"
               value={formValues.email}
               onChange={handleInputChange}
-              className="border border-gray-400 p-2.5 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="border border-gray-400 p-2.5 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-100 hover:border-orange-500"
             />
           </div>
 
@@ -121,7 +121,7 @@ export const Login = () => {
               placeholder="Password"
               value={formValues.password}
               onChange={handleInputChange}
-              className="border border-gray-400 p-2.5 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="border border-gray-400 p-2.5 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-100 hover:border-orange-500"
             />
           </div>
 
@@ -133,12 +133,12 @@ export const Login = () => {
               name="terms"
               checked={formValues.terms}
               onChange={handleInputChange}
-              className="focus:ring-2 focus:ring-blue-500"
+              className="focus:bg-orange-600"
               required
             />
             <label htmlFor="terms" className="text-sm text-start ml-4">
               I agree to the{" "}
-              <span className="font-bold" style={{ color: "#093c28" }}>
+              <span className="font-bold" style={{ color: "#eb7134", }}>
                 Terms of Use and Privacy Policy.
               </span>
             </label>
@@ -154,13 +154,13 @@ export const Login = () => {
           </button>
 
           <p className="flex items-center justify-center gap-4 text-sm mt-4">
-  <span className="flex items-center gap-2 text-orange-800 font-medium hover:text-blue-800 transition duration-300 cursor-pointer">
+  <span className="flex items-center gap-2 text-orange-600 font-medium hover:text-gray-800 transition duration-300 cursor-pointer">
     Forget Password?
   </span>
   <span className="text-gray-400">|</span>
   <NavLink
     to="/sign"
-    className="flex items-center gap-2 text-orange-800 font-medium hover:text-blue-800 transition duration-300"
+    className="flex items-center gap-2 text-orange-600 font-medium hover:text-gray-800 transition duration-300"
   >
     Create Account
   </NavLink>
