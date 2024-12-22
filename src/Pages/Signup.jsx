@@ -241,230 +241,198 @@ export const Sign = () => {
   return (
     <>
     <Navbar/>
-      <div className="flex min-h-screen justify-center items-center">
-        <div ref={imageRef} className="mt-30 w-1/2 hidden sm:flex">
-          <img
-            src="https://margdarshak.org/img/skill%20rehan.png"
-            alt="Illustration"
-            className="block"
-          />
-        </div>
+    <div className="flex flex-col sm:flex-row min-h-screen justify-center items-center">
+  {/* Left Image Section */}
+  <div ref={imageRef} className="hidden sm:flex w-1/2">
+    <img
+      src="https://margdarshak.org/img/skill%20rehan.png"
+      alt="Illustration"
+      className="block max-w-full h-auto"
+    />
+  </div>
 
-        {/* Form Section */}
-        <div
-          className="flex flex-col justify-between p-6"
-          style={{
-            width: "550px",
-            marginTop: "-50px",
-          }}
-        >
-          <div className="flex items-center mb-4">
-            <img
-              src="https://margdarshak.in/img/Mlogo.png"
-              alt=""
-              className="w-12"
-            />
-            <h1 className="text-4xl font-bold ml-4 mb-6 mt-3">Sign Up</h1>
-          </div>
-
-          <div className="relative">
-  {/* Name Input */}
+  {/* Form Section */}
   <div
-    className="flex items-center border border-gray-400 rounded-lg overflow-hidden hover:border-orange-500 focus-within:border-orange-500 transition"
-    style={{ width: "420px" }}
+    className="flex flex-col justify-between p-4 sm:p-6"
+    style={{
+      width: "100%",
+      maxWidth: "550px",
+      marginTop: "-50px",
+    }}
   >
-    <div className="p-4">
-      <FaUser className="text-black-500" />
+    <div className="flex items-center mb-4">
+      <img
+        src="https://margdarshak.in/img/Mlogo.png"
+        alt="Logo"
+        className="w-12"
+      />
+      <h1 className="text-2xl sm:text-4xl font-bold ml-4 mb-6 mt-3">Sign Up</h1>
     </div>
-    <input
-      id="name"
-      name="name"
-      type="text"
-      placeholder="Name"
-      value={formValues.name}
-      onChange={handleInputChange}
-      className="w-full p-3 text-sm focus:outline-none"
-    />
-  </div>
-</div>
 
-<br />
-
-{/* Phone Input with OTP button */}
-<div className="relative mb-4 space-y-2">
-  <div className="flex items-center space-x-2">
-    <PhoneInput
-      country={"in"}
-      value={formValues.mobile}
-      onChange={handlePhoneChange}
-      placeholder="Mobile"
-      inputStyle={{
-        width: "100%",
-        height: "50px",
-        paddingLeft: "58px",
-      }}
-    />
-    <button
-      className="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 shadow-md"
-      onClick={sendOTP}
-    >
-      OTP
-    </button>
-  </div>
-</div>
-
-{/* Email Input */}
-<div className="flex items-center">
-  <div className="flex-grow">
-    <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden hover:border-orange-500 focus-within:border-orange-500 transition">
-      <div className="p-2">
-        <FaEnvelope className="text-black-500" />
+    {/* Name Input */}
+    <div className="relative mb-4">
+      <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden hover:border-orange-500 focus-within:border-orange-500 transition">
+        <div className="p-4">
+          <FaUser className="text-black-500" />
+        </div>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Name"
+          value={formValues.name}
+          onChange={handleInputChange}
+          className="w-full p-3 text-sm focus:outline-none"
+        />
       </div>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="Email"
-        value={formValues.email}
-        onChange={handleInputChange}
-        className="w-full p-3 border-l focus:outline-none"
-      />
     </div>
-  </div>
-  <button
-    onClick={sendOTPToEmail}
-    className="ml-2 px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
-  >
-    OTP
-  </button>
-</div>
 
+    {/* Phone Input with OTP button */}
+    <div className="relative mb-4">
+      <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+        <PhoneInput
+          country={"in"}
+          value={formValues.mobile}
+          onChange={handlePhoneChange}
+          placeholder="Mobile"
+          inputStyle={{
+            width: "100%",
+            height: "50px",
+            paddingLeft: "58px",
+          }}
+        />
+        <button
+          className="w-full sm:w-auto px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 shadow-md"
+          onClick={sendOTP}
+        >
+          OTP
+        </button>
+      </div>
+    </div>
 
-        
-       
-<br />
-   
-
-<div class="mb-4 space-y-3">
-    <label class="flex items-center space-x-2">
-      <input
-        type="checkbox"
-        id="terms"
-        name="terms"
-        checked={formValues.terms}
-        onChange={handleInputChange}
-        class="rounded focus:ring focus:ring-blue-300"
-      />
-      <span class="text-sm text-gray-600">
-        I agree to the <a href="#" class="text-orange-600 font-medium">Terms of Use</a> and <a href="#" class="text-orange -600 font-medium">Privacy Policy</a>.
-      </span>
-    </label>
-  </div>
-
-  
-  <div class="mb-4">
-    <label class="block text-sm font-medium text-gray-600 mb-2">I consent to receive updates via:</label>
-    
-    <div className="flex flex-rw m-1 ">
-              <div className="m-1">
-                <input
-                  type="checkbox"
-                  name="opt1"
-                  id="1-opt"
-                  className="m-1"
-                  checked={formValues.opt1}
-                  onChange={handleOpt}
-                />
-                <label htmlFor="1-opt">Whatsapp</label>
-              </div>
-              <div className="m-1">
-                <input
-                  type="checkbox"
-                  id="2-opt"
-                  name="opt2"
-                  className="m-1"
-                  checked={formValues.opt2}
-                  onChange={handleOpt}
-                />
-                <label htmlFor="2-opt">Email</label>
-              </div>
-              <div className="m-1">
-                <input
-                  type="checkbox"
-                  id="3-opt"
-                  className="m-1"
-                  name="opt3"
-                  checked={formValues.opt3}
-                  onChange={handleOpt}
-                />
-                <label htmlFor="3-opt">Call</label>
-              </div>
-              <div className="m-1">
-                <input
-                  type="checkbox"
-                  id="4-opt"
-                  name="opt4"
-                  className="m-1"
-                  checked={formValues.opt4}
-                  onChange={handleOpt}
-                />
-                <label htmlFor="4-opt">SMS</label>
-              </div>
-            </div>
-
-    <p class="text-sm text-gray-600 mt-2">
-      You can opt-out anytime by replying <b> 'STOP'</b>.
-    </p>
-  </div>
-
-  
-  <div class="mt-6">
-    <button
-      class="w-full bg-orange-500 text-white text-lg font-medium py-3 rounded-lg hover:bg-orange-600 focus:ring focus:ring-blue-300"
-      onClick={handleSubmit}
-    >
-      Sign Up
-    </button>
-  </div>
-
-  
-  <div className="text-center mt-4 text-sm">
-  <p className="text-black-700">
-    Already have an account?{' '}
-    <NavLink
-      to="/login"
-      className="text-orange-400 font-medium  hover:text-orange-600 transition duration-300"
-    >
-      Sign In
-    </NavLink>
-  </p>
-</div>
-
-
-          {/* OTP Dialog */}
-          {otpDialogOpen && (
-            <OtpDialog
-              open={otpDialogOpen}
-              onClose={() => setOtpDialogOpen(false)}
-              onSubmit={verifyOtp} // Pass the verifyOtp function here
-            />
-          )}
-
-          {/* Toast Notification Container */}
-          <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="colored"
+    {/* Email Input */}
+    <div className="relative mb-4">
+      <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+        <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden hover:border-orange-500 focus-within:border-orange-500 transition w-full">
+          <div className="p-4">
+            <FaEnvelope className="text-black-500" />
+          </div>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={formValues.email}
+            onChange={handleInputChange}
+            className="w-full p-3 text-sm focus:outline-none"
           />
         </div>
+        <button
+          onClick={sendOTPToEmail}
+          className="w-full sm:w-auto px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
+        >
+          OTP
+        </button>
       </div>
+    </div>
+
+    {/* Terms and Conditions */}
+    <div className="mb-4">
+      <label className="flex items-center space-x-2">
+        <input
+          type="checkbox"
+          id="terms"
+          name="terms"
+          checked={formValues.terms}
+          onChange={handleInputChange}
+          className="rounded focus:ring focus:ring-blue-300"
+        />
+        <span className="text-sm text-gray-600">
+          I agree to the{" "}
+          <a href="#" className="text-orange-600 font-medium">
+            Terms of Use
+          </a>{" "}
+          and{" "}
+          <a href="#" className="text-orange-600 font-medium">
+            Privacy Policy
+          </a>.
+        </span>
+      </label>
+    </div>
+
+    {/* Communication Preferences */}
+    <div className="mb-4 space-y-3">
+      <label className="block text-sm font-medium text-gray-600 mb-2">
+        I consent to receive updates via:
+      </label>
+      <div className="flex flex-wrap gap-4">
+        {["Whatsapp", "Email", "Call", "SMS"].map((option, index) => (
+          <label key={index} className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id={`${index}-opt`}
+              name={`opt${index + 1}`}
+              className="rounded focus:ring focus:ring-blue-300"
+              checked={formValues[`opt${index + 1}`]}
+              onChange={handleOpt}
+            />
+            <span>{option}</span>
+          </label>
+        ))}
+      </div>
+      <p className="text-sm text-gray-600 mt-2">
+        You can opt-out anytime by replying <b>'STOP'</b>.
+      </p>
+    </div>
+
+    {/* Sign Up Button */}
+    <div className="mt-6">
+      <button
+        className="w-full bg-orange-500 text-white text-lg font-medium py-3 rounded-lg hover:bg-orange-600 focus:ring focus:ring-blue-300"
+        onClick={handleSubmit}
+      >
+        Sign Up
+      </button>
+    </div>
+
+    {/* Already Have an Account */}
+    <div className="text-center mt-4 text-sm">
+      <p className="text-black-700">
+        Already have an account?{" "}
+        <NavLink
+          to="/login"
+          className="text-orange-400 font-medium hover:text-orange-600 transition duration-300"
+        >
+          Sign In
+        </NavLink>
+      </p>
+    </div>
+
+    {/* OTP Dialog */}
+    {otpDialogOpen && (
+      <OtpDialog
+        open={otpDialogOpen}
+        onClose={() => setOtpDialogOpen(false)}
+        onSubmit={verifyOtp}
+      />
+    )}
+
+    {/* Toast Notifications */}
+    <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+    />
+  </div>
+</div>
+
     </>
   );
 };

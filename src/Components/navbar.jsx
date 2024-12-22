@@ -12,10 +12,10 @@ function Nav() {
   };
 
   return (
-    <nav className="flex items-center justify-between px-4 py-4 relative bg-white shadow-md">
+    <nav className="flex items-center justify-between px-4 py-4 relative ">
       {/* Logo Section */}
       <div className="flex items-center flex-shrink-0">
-        <img src={Logo} alt="Margdarshakendra Logo" className="h-10 md:h-12" />
+        <img src={Logo} alt="Margdarshakendra Logo" className="h-10 md:h-12 px-8" />
       </div>
 
       {/* Hamburger Menu */}
