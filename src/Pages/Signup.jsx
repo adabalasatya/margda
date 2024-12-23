@@ -8,6 +8,7 @@ import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import "react-phone-input-2/lib/style.css";
 import Navbar from '../Components/navbar'
+import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 
 export const Sign = () => {
   const [formValues, setFormValues] = useState({
@@ -270,8 +271,10 @@ export const Sign = () => {
     </div>
 
     {/* Name Input */}
-    <div className="relative mb-4">
-      <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden hover:border-orange-500 focus-within:border-orange-500 transition">
+    <div className="relative mb-4 ">
+      <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden hover:border-orange-500 focus-within:border-orange-500 transition"
+      style={{ width: "420px" }}
+      >
         <div className="p-4">
           <FaUser className="text-black-500" />
         </div>
@@ -280,6 +283,9 @@ export const Sign = () => {
           name="name"
           type="text"
           placeholder="Name"
+          inputStyle={{
+            width: "400px",
+          }}
           value={formValues.name}
           onChange={handleInputChange}
           className="w-full p-3 text-sm focus:outline-none"
